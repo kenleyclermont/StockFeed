@@ -1,6 +1,6 @@
 # StockFeed
 
-![ibmpage]([ibmpage_view.gif](https://github.com/kenleyclermont/StockFeed/blob/master/ibmpage_view.gif)
+![ibmpage](https://github.com/kenleyclermont/StockFeed/blob/master/ibmpage_view.gif)
 
 ## Overview
 
