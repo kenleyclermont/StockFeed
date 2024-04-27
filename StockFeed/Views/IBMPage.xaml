@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:StockFeed.Views"
+             xmlns:model="clr-namespace:StockFeed.Models"
+             xmlns:vm="clr-namespace:StockFeed.ViewModels" 
+             x:DataType="vm:IBMPageViewModel"
+             x:Class="StockFeed.Views.IBMPage">
+    <ScrollView>
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding modelViewIBMData}" >
+        <BindableLayout.ItemTemplate>
+            <DataTemplate x:DataType="model:IBMData">
+                <VerticalStackLayout>
+                        <StackLayout>
+                            <!-- HeadLine -->
+                            <Border StrokeThickness="0" WidthRequest="400" BackgroundColor="Black" >
+                                <Label Text="IBM" FontFamily="Franklin Gothic" Padding="10,18,10,18"
+                                       Style="{StaticResource Headline}" SemanticProperties.HeadingLevel="Level1" 
+                                       HorizontalOptions="Center">
+                            </Label>
+                            </Border>
+                            <!-- SubHeadLine -->
+                            <Border WidthRequest="400" StrokeThickness="0">
+                                <Label Padding="10,18,10,18"  TextDecorations="Underline"
+                                   Text="Latest Price and Volume Information for IBM" BackgroundColor="Black" WidthRequest="400" FontFamily="Georgia"
+                                   Style="{StaticResource SubHeadline}" SemanticProperties.HeadingLevel="Level2"
+                                   SemanticProperties.Description="Latest price and volume information for IBM">
+                            </Label>
+                            </Border>
+                            <!-- Description -->
+                            <Border WidthRequest="400" StrokeThickness="1" BackgroundColor="Black" Opacity="0.85">
+                                <Label Padding="10,18,10,18">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Here's a detailed summary of the latest price and volume data for " FontSize="20" FontFamily="Times New Roman"/>
+                                                <Span Text="IBM's stock" TextDecorations="Underline" FontSize="20" FontFamily="Times New Roman"/>
+                                                <Span Text=". It's important for investors, traders, and fans, giving real-time updates on how IBM is doing in the stock market. " FontSize="20"  FontFamily="Times New Roman"/>
+                                                <Span Text="Keep up-to-date with the latest price changes and trading volumes thanks to this important information." FontSize="20"  FontFamily="Times New Roman"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Border>
+                        </StackLayout>
+                        <!-- IBM Data -->
+                        <Border WidthRequest="400" StrokeThickness="0" HeightRequest="320" BackgroundColor="Black">
+                            <StackLayout Padding="10,18,10,18">
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Symbol: " TextColor="Purple" FontSize="20" FontFamily="Georgia"/>
+                                            <Span Text="{Binding Symbol}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Open: " TextColor="Purple" FontSize="20" FontFamily="Georgia" />
+                                            <Span Text="{Binding Open}" FontSize="18" FontFamily="Calibri Body"  />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="High: " TextColor="Purple" FontSize="20" FontFamily="Georgia" />
+                                            <Span Text="{Binding High}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Low: " TextColor="Purple" FontSize="20" FontFamily="Georgia"/>
+                                            <Span Text="{Binding Low}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Price: " TextColor="Purple" FontSize="20" FontFamily="Georgia"/>
+                                            <Span Text="{Binding Price}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Volume: " TextColor="Purple" FontSize="20" FontFamily="Georgia"/>
+                                            <Span Text="{Binding Volume}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Latest trading day: " TextColor="Purple" FontSize="20" FontFamily="Georgia"/>
+                                            <Span Text="{Binding LatestTradingDay}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Previous Close: " TextColor="Purple" FontSize="20" FontFamily="Georgia" />
+                                            <Span Text="{Binding PreviousClose}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Change: " TextColor="Purple" FontSize="20" FontFamily="Georgia" />
+                                            <Span Text="{Binding Change}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                            <Span Text="Change Percent: " TextColor="Purple" FontSize="20" FontFamily="Georgia" />
+                                            <Span Text="{Binding ChangePercent}" FontSize="18" FontFamily="Calibri Body" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
